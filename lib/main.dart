@@ -21,16 +21,16 @@ class MyApp extends StatelessWidget {
           title: const Text("Billionaire App"),
         ),
         body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           color: Colors.blueGrey[700],
           height: double.infinity,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Balance Part"),
+              const Text("Balance Part"),
               ElevatedButton(
-                  onPressed: buttonFunction, child: Text("Click Here"))
+                  onPressed: buttonFunction, child: const Text("Click Here"))
             ],
           ),
         ),
