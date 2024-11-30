@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   void buttonFunction() {
-    print("Button is pressed!!");
+    print('Button is pressed!!');
   }
 
   @override
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Billionaire App"),
+          title: const Text('Billionaire App'),
         ),
         body: Container(
           padding: const EdgeInsets.all(20),
@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Bank Balance: "),
+                    Text('Bank Balance: '),
                     SizedBox(height: 20),
-                    Text("0")
+                    Text('0')
                   ],
                 ),
               ),
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
                             backgroundColor: Colors.red[700],
                             minimumSize: const Size(double.infinity, 55)),
                         onPressed: buttonFunction,
-                        child: const Text("Add Money")),
+                        child: const Text('Add Money')),
                   ],
                 ),
               )
