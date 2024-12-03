@@ -1,14 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+//state are the information that can be changed
+
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  void buttonFunction() {
-    print('Button is pressed!!');
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double balance = 0;
+
+  void addMoney() async {
+    setState(() {
+      balance = balance + 500;
+    });
+
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble('balance', balance);
+
+    print('$balance');
+  }
+
+  void loadBalane() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      balance = prefs.getDouble('balance') ?? 0;
+    });
   }
 
   @override
@@ -28,14 +53,16 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Expanded(
+              Expanded(
                 flex: 9,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Bank Balance: '),
                     SizedBox(height: 20),
-                    Text('0')
+                    Text('$balance'),
+                    OutlinedButton(
+                        onPressed: loadBalane, child: Text('Load Balance'))
                   ],
                 ),
               ),
@@ -70,7 +97,7 @@ class MyApp extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red[700],
                             minimumSize: const Size(double.infinity, 55)),
-                        onPressed: buttonFunction,
+                        onPressed: addMoney,
                         child: const Text('Add Money')),
                   ],
                 ),
