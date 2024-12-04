@@ -28,6 +28,12 @@ class _MyAppState extends State<MyApp> {
     print('$balance');
   }
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    loadBalane();
+  }
+
   void loadBalane() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -61,8 +67,8 @@ class _MyAppState extends State<MyApp> {
                     Text('Bank Balance: '),
                     SizedBox(height: 20),
                     Text('$balance'),
-                    OutlinedButton(
-                        onPressed: loadBalane, child: Text('Load Balance'))
+                    // OutlinedButton(
+                    //     onPressed: loadBalane, child: Text('Load Balance'))
                   ],
                 ),
               ),
