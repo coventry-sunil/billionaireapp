@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AddMoneyButton extends StatelessWidget {
   final void Function() addMoneyFunction;
-  AddMoneyButton({super.key, required this.addMoneyFunction});
+  const AddMoneyButton({super.key, required this.addMoneyFunction});
 
   @override
   Widget build(BuildContext context) {
