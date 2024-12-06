@@ -1,4 +1,5 @@
 import 'package:billionaireapp/add_money_button.dart';
+import 'package:billionaireapp/balance_view.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -60,19 +61,20 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                flex: 9,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Bank Balance: '),
-                    SizedBox(height: 20),
-                    Text('$balance'),
-                    // OutlinedButton(
-                    //     onPressed: loadBalane, child: Text('Load Balance'))
-                  ],
-                ),
-              ),
+              BalanceView(balance: balance),
+              // Expanded(
+              //   flex: 9,
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: [
+              //       Text('Bank Balance: '),
+              //       SizedBox(height: 20),
+              //       Text('$balance'),
+              //       // OutlinedButton(
+              //       //     onPressed: loadBalane, child: Text('Load Balance'))
+              //     ],
+              //   ),
+              // ),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //   children: [

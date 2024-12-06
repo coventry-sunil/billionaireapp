@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AddMoneyButton extends StatelessWidget {
-  void Function() addMoneyFunction;
+  final void Function() addMoneyFunction;
   AddMoneyButton({super.key, required this.addMoneyFunction});
 
   @override
